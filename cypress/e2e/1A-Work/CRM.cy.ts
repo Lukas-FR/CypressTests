@@ -50,7 +50,7 @@ describe('login screen', () => {
         cy.get("#field-select--null").click()
         cy.get("#field-text-addressLine1").type("adress")                                  
         cy.get("#field-text-city").type("city")                                  
-        cy.get("#field-text-postalCode").type("postalCode")                                 
+        cy.get("#field-text-postalCode").type("14000")                                 
         cy.get("#field-select-countryCode-default").click()
         cy.get("#field-select-countryCode-default__select__element_0").click()
         cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
@@ -199,7 +199,7 @@ describe('login screen', () => {
         cy.get("#field-select--null").click()
         cy.get("#field-text-addressLine1").type("adress")                                  
         cy.get("#field-text-city").type("city")                                  
-        cy.get("#field-text-postalCode").type("postalCode")                                 
+        cy.get("#field-text-postalCode").type("14000")                                 
         cy.get("#field-select-countryCode-default").click()
         cy.get("#field-select-countryCode-default__select__element_0").click()
         cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
@@ -292,7 +292,7 @@ describe('login screen', () => {
         cy.get("#field-select--null").click()
         cy.get("#field-text-addressLine1").type("adress")                                  
         cy.get("#field-text-city").type("city")                                  
-        cy.get("#field-text-postalCode").type("postalCode")                                 
+        cy.get("#field-text-postalCode").type("14000")                                 
         cy.get("#field-select-countryCode-default").click()
         cy.get("#field-select-countryCode-default__select__element_0").click()
         cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
@@ -360,7 +360,7 @@ describe('login screen', () => {
         cy.get("#field-select--null").click()
         cy.get("#field-text-addressLine1").type("adress")                                  
         cy.get("#field-text-city").type("city")                                  
-        cy.get("#field-text-postalCode").type("postalCode")                                 
+        cy.get("#field-text-postalCode").type("14000")                                 
         cy.get("#field-select-countryCode-default").click()
         cy.get("#field-select-countryCode-default__select__element_0").click()
         cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
@@ -404,14 +404,279 @@ describe('login screen', () => {
         cy.get("#generic-form-button").click().wait(1000)
 
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------
+        //Creating Person - Worker
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        cy.get("#menu-party > .main-menu__module-wrapper").click()                      //add method everywhere
+        cy.get("#party-contact-list-worker").click()
+        cy.get("#field-select--null__select").click()                                   //add click at physical person
+        cy.get('#input-field-text-firstName-baseInfo').type("firstNameWorker")                               
+        cy.get('#input-field-text-lastName-baseInfo').type("lastNameWorker")                                 
+        cy.get('#input-field-email-pin-contactIdentification').type("emailWorker@flying-rat.online")                //add variable - email for creating
+        cy.get("#generic-form-button").click().wait(1000)
+            
+
+        //go to tab - emails
+        cy.get('.tabs__list > div:nth-child(3)').click()
+        cy.get("#field-select--null").click()
+        cy.get("#field-email-value").type("emailWorker1@flying-rat.online")                    //add variable - email
+        cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
 
 
+        //go to tab - telephone
+        cy.get('.tabs__list > div:nth-child(4)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get("#field-phone-value").type("123456789")                                  
+        cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
 
 
+        //go to tab - Adress
+        cy.get('.tabs__list > div:nth-child(5)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get("#field-text-addressLine1").type("adress")                                  
+        cy.get("#field-text-city").type("city")                                  
+        cy.get("#field-text-postalCode").type("14000")                                 
+        cy.get("#field-select-countryCode-default").click()
+        cy.get("#field-select-countryCode-default__select__element_0").click()
+        cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
 
 
+        //go to tab - Notes
+
+
+        //go to tab - SocialNetwork
+        cy.get('.tabs__list > div:nth-child(7)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
+        cy.get("#generic-form-button").click().wait(1000)
+        
+        cy.get("#field-select--null").click()
+        cy.get('#field-select-socialNetworkTypeId-default > .field-wrapper > .field-wrapper__main').click()     // přidá Instagram
+        cy.get('#field-select-socialNetworkTypeId-default__select__element_1').click()
+        cy.get("#input-field-text-userId-default").type("Instagram")                                  
+        cy.get("#generic-form-button").click().wait(1000)
+
+
+        //go to tab - UserAccess
+        cy.get('.tabs__list > div:nth-child(8)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get('#field-search-userSearch__st').type("marek").wait(2000).type("{enter}")
+        cy.get("#generic-form-button").click().wait(1000)
+
+
+        //go to tab - Activity
+        cy.get('.tabs__list > div:nth-child(11)').click()                                //Přidá defaultně vyplněnou aktivitu typu "Úkol"                     
+        cy.get("#field-select--null").click()
+        cy.get("#generic-form-button").click().wait(1000)
+
+
+        //go to tab - Working hours
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------
+        //Creating Person - Candidate
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        cy.get("#menu-party > .main-menu__module-wrapper").click()                      //add method everywhere
+        cy.get("#party-contact-list-job-candidate").click()
+        cy.get("#field-select--null__select").click()                                   //add click at physical person
+        cy.get('#input-field-text-firstName-baseInfo').type("firstNameCandidate")                               
+        cy.get('#input-field-text-lastName-baseInfo').type("lastNameCandidate")                                 
+        cy.get('#input-field-email-pin-contactIdentification').type("emailCandidate@flying-rat.online")                //add variable - email for creating
+        cy.get("#generic-form-button").click().wait(1000)
+            
+
+        //go to tab - emails
+        cy.get('.tabs__list > div:nth-child(3)').click()
+        cy.get("#field-select--null").click()
+        cy.get("#field-email-value").type("emailCandidate1@flying-rat.online")                    //add variable - email
+        cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
+
+
+        //go to tab - telephone
+        cy.get('.tabs__list > div:nth-child(4)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get("#field-phone-value").type("123456789")                                  
+        cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
+
+
+        //go to tab - Adress
+        cy.get('.tabs__list > div:nth-child(5)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get("#field-text-addressLine1").type("adress")                                  
+        cy.get("#field-text-city").type("city")                                  
+        cy.get("#field-text-postalCode").type("14000")                                 
+        cy.get("#field-select-countryCode-default").click()
+        cy.get("#field-select-countryCode-default__select__element_0").click()
+        cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
+
+
+        //go to tab - Notes
+
+
+        //go to tab - SocialNetwork
+        cy.get('.tabs__list > div:nth-child(7)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
+        cy.get("#generic-form-button").click().wait(1000)
+        
+        cy.get("#field-select--null").click()
+        cy.get('#field-select-socialNetworkTypeId-default > .field-wrapper > .field-wrapper__main').click()     // přidá Instagram
+        cy.get('#field-select-socialNetworkTypeId-default__select__element_1').click()
+        cy.get("#input-field-text-userId-default").type("Instagram")                                  
+        cy.get("#generic-form-button").click().wait(1000)
+
+
+        //go to tab - UserAccess
+        cy.get('.tabs__list > div:nth-child(8)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get('#field-search-userSearch__st').type("marek").wait(2000).type("{enter}")
+        cy.get("#generic-form-button").click().wait(1000)
+
+
+        //go to tab - Activity
+        cy.get('.tabs__list > div:nth-child(11)').click()                                //Přidá defaultně vyplněnou aktivitu typu "Úkol"                     
+        cy.get("#field-select--null").click()
+        cy.get("#generic-form-button").click().wait(1000)
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------
+        //Editing Person - Agent
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        cy.get("#menu-party > .main-menu__module-wrapper").click()                      //add method everywhere
+        cy.get("#party-contact-list-agent").click()
+        cy.get("#table-row-0").click()                                                  //add click at physical person
+        cy.get('#input-field-text-firstName-baseInfo').type("firstNameAgent")                               
+        cy.get('#input-field-text-lastName-baseInfo').type("lastNameAgent")                                 
+        cy.get('#input-field-email-pin-contactIdentification').type("emailAgent@flying-rat.online")                //add variable - email for creating
+        cy.get("#generic-form-button").click().wait(1000)
+            
+
+        //go to tab - emails
+        cy.get('.tabs__list > div:nth-child(3)').click()
+        cy.get("#field-select--null").click()
+        cy.get("#field-email-value").type("emailAgent1@flying-rat.online")                    //add variable - email
+        cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
+
+
+        //go to tab - telephone
+        cy.get('.tabs__list > div:nth-child(4)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get("#field-phone-value").type("123456789")                                  
+        cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
+
+
+        //go to tab - Adress
+        cy.get('.tabs__list > div:nth-child(5)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get("#field-text-addressLine1").type("adress")                                  
+        cy.get("#field-text-city").type("city")                                  
+        cy.get("#field-text-postalCode").type("14000")                                 
+        cy.get("#field-select-countryCode-default").click()
+        cy.get("#field-select-countryCode-default__select__element_0").click()
+        cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
+
+
+        //go to tab - Notes
+
+
+        //go to tab - SocialNetwork
+        cy.get('.tabs__list > div:nth-child(7)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
+        cy.get("#generic-form-button").click().wait(1000)
+        
+        cy.get("#field-select--null").click()
+        cy.get('#field-select-socialNetworkTypeId-default > .field-wrapper > .field-wrapper__main').click()     // přidá Instagram
+        cy.get('#field-select-socialNetworkTypeId-default__select__element_1').click()
+        cy.get("#input-field-text-userId-default").type("Instagram")                                  
+        cy.get("#generic-form-button").click().wait(1000)
+
+
+        //go to tab - UserAccess
+        cy.get('.tabs__list > div:nth-child(8)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get('#field-search-userSearch__st').type("marek").wait(2000).type("{enter}")
+        cy.get("#generic-form-button").click().wait(1000)
+
+
+        //go to tab - Activity
+        cy.get('.tabs__list > div:nth-child(11)').click()                                //Přidá defaultně vyplněnou aktivitu typu "Úkol"                     
+        cy.get("#field-select--null").click()
+        cy.get("#generic-form-button").click().wait(1000)
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------
+        //Editing Organization - Pickup Point
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        cy.get("#menu-party > .main-menu__module-wrapper").click()                      //add method everywhere
+        cy.get("#party-contact-list-pickup-point").click()
+        cy.get("#table-row-0").click()                                                  //add click at physical person
+        cy.get('#input-field-text-firstName-baseInfo').type("firstNamePickupPoint")                               
+        cy.get('#input-field-text-lastName-baseInfo').type("lastNamePickupPoint")                                 
+        cy.get('#input-field-email-pin-contactIdentification').type("emailPickupPoint@flying-rat.online")                //add variable - email for creating
+        cy.get("#generic-form-button").click().wait(1000)
+            
+
+        //go to tab - emails
+        cy.get('.tabs__list > div:nth-child(3)').click()
+        cy.get("#field-select--null").click()
+        cy.get("#field-email-value").type("emailPickupPoint1@flying-rat.online")                    //add variable - email
+        cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
+
+
+        //go to tab - telephone
+        cy.get('.tabs__list > div:nth-child(4)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get("#field-phone-value").type("123456789")                                  
+        cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
+
+
+        //go to tab - Adress
+        cy.get('.tabs__list > div:nth-child(5)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get("#field-text-addressLine1").type("adress")                                  
+        cy.get("#field-text-city").type("city")                                  
+        cy.get("#field-text-postalCode").type("14000")                                 
+        cy.get("#field-select-countryCode-default").click()
+        cy.get("#field-select-countryCode-default__select__element_0").click()
+        cy.get("#generic-form-button").click().wait(1000)                               //add var "saveButton"??
+
+
+        //go to tab - Notes
+
+
+        //go to tab - SocialNetwork
+        cy.get('.tabs__list > div:nth-child(7)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
+        cy.get("#generic-form-button").click().wait(1000)
+        
+        cy.get("#field-select--null").click()
+        cy.get('#field-select-socialNetworkTypeId-default > .field-wrapper > .field-wrapper__main').click()     // přidá Instagram
+        cy.get('#field-select-socialNetworkTypeId-default__select__element_1').click()
+        cy.get("#input-field-text-userId-default").type("Instagram")                                  
+        cy.get("#generic-form-button").click().wait(1000)
+
+
+        //go to tab - UserAccess
+        cy.get('.tabs__list > div:nth-child(8)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get('#field-search-userSearch__st').type("marek").wait(2000).type("{enter}")
+        cy.get("#generic-form-button").click().wait(1000)
+
+
+        //go to tab - Activity
+        cy.get('.tabs__list > div:nth-child(11)').click()                                //Přidá defaultně vyplněnou aktivitu typu "Úkol"                     
+        cy.get("#field-select--null").click()
+        cy.get("#generic-form-button").click().wait(1000)
 
 
 
