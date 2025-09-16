@@ -126,7 +126,7 @@ describe('login screen', () => {
 
         //go to tab - SocialNetwork
         cy.get('.tabs__list > div:nth-child(7)').click()                                
-        cy.get("#field-select--null").click()
+        cy.get("#field-select--null").click().wait(500)
         cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
         cy.get("#generic-form-button").click().wait(1000)
         
@@ -210,7 +210,7 @@ describe('login screen', () => {
 
         //go to tab - SocialNetwork
         cy.get('.tabs__list > div:nth-child(7)').click()                                
-        cy.get("#field-select--null").click()
+        cy.get("#field-select--null").click().wait(500)
         cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
         cy.get("#generic-form-button").click().wait(1000)
         
@@ -249,7 +249,17 @@ describe('login screen', () => {
         cy.get("#input-field-text-count-pallet").type("10")
         cy.get("#generic-form-button").click().wait(1000)
         
+
+        //go to tab - Odběrná místa
+        cy.get('.tabs__list > div:nth-child(17)').click()                                        //Přejde do Sekce kontaktní osoby                     
+        cy.get("#field-select--null").click()
+        cy.get('#input-field-text-name-baseInfo').type("CustomerPickupPointName")                       //Jméno    
+        cy.get('#input-field-text-cin-contactIdentification').type("Customer987654321PickupPoint")      //IČ
+        cy.get('#field-select-languageCode-baseInfo > .field-wrapper > .field-wrapper__main').click()
+        cy.get('#field-select-languageCode-baseInfo__select__element_0').click()                        //Vybere češtinu                
+        cy.get("#generic-form-button").click().wait(1000)
         
+
         //go to tab - kontaktní osoby
         cy.get('.tabs__list > div:nth-child(18)').click()                                        //Přejde do Sekce kontaktní osoby                     
         cy.get("#field-select--null").click()
@@ -303,7 +313,7 @@ describe('login screen', () => {
 
         //go to tab - SocialNetwork
         cy.get('.tabs__list > div:nth-child(7)').click()                                
-        cy.get("#field-select--null").click()
+        cy.get("#field-select--null").click().wait(500)
         cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
         cy.get("#generic-form-button").click().wait(1000)
         
@@ -371,7 +381,7 @@ describe('login screen', () => {
 
         //go to tab - SocialNetwork
         cy.get('.tabs__list > div:nth-child(7)').click()                                
-        cy.get("#field-select--null").click()
+        cy.get("#field-select--null").click().wait(500)
         cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
         cy.get("#generic-form-button").click().wait(1000)
         
@@ -394,6 +404,16 @@ describe('login screen', () => {
         cy.get("#field-select--null").click()
         cy.get("#generic-form-button").click().wait(1000)
         
+
+        //go to tab - Odběrná místa
+        cy.get('.tabs__list > div:nth-child(13)').click()                                        //Přejde do Sekce kontaktní osoby                     
+        cy.get("#field-select--null").click()
+        cy.get('#input-field-text-name-baseInfo').type("VendorPickupPointName")                       //Jméno    
+        cy.get('#input-field-text-cin-contactIdentification').type("Vendor987654321PickupPoint")            //IČ
+        cy.get('#field-select-languageCode-baseInfo > .field-wrapper > .field-wrapper__main').click()
+        cy.get('#field-select-languageCode-baseInfo__select__element_0').click()                        //Vybere češtinu                
+        cy.get("#generic-form-button").click().wait(1000)
+
         
         //go to tab - kontaktní osoby
         cy.get('.tabs__list > div:nth-child(14)').click()                                        //Přejde do Sekce kontaktní osoby                     
@@ -448,7 +468,7 @@ describe('login screen', () => {
 
         //go to tab - SocialNetwork
         cy.get('.tabs__list > div:nth-child(7)').click()                                
-        cy.get("#field-select--null").click()
+        cy.get("#field-select--null").click().wait(500)
         cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
         cy.get("#generic-form-button").click().wait(1000)
         
@@ -519,7 +539,7 @@ describe('login screen', () => {
 
         //go to tab - SocialNetwork
         cy.get('.tabs__list > div:nth-child(7)').click()                                
-        cy.get("#field-select--null").click()
+        cy.get("#field-select--null").click().wait(500)
         cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
         cy.get("#generic-form-button").click().wait(1000)
         
@@ -538,7 +558,7 @@ describe('login screen', () => {
 
 
         //go to tab - Activity
-        cy.get('.tabs__list > div:nth-child(11)').click()                                //Přidá defaultně vyplněnou aktivitu typu "Úkol"                     
+        cy.get('.tabs__list > div:nth-child(10)').click()                                //Přidá defaultně vyplněnou aktivitu typu "Úkol"                     
         cy.get("#field-select--null").click()
         cy.get("#generic-form-button").click().wait(1000)
 
@@ -551,10 +571,6 @@ describe('login screen', () => {
         cy.get("#menu-party > .main-menu__module-wrapper").click()                      //add method everywhere
         cy.get("#party-contact-list-agent").click()
         cy.get("#table-row-0").click()                                                  //add click at physical person
-        cy.get('#input-field-text-firstName-baseInfo').type("firstNameAgent")                               
-        cy.get('#input-field-text-lastName-baseInfo').type("lastNameAgent")                                 
-        cy.get('#input-field-email-pin-contactIdentification').type("emailAgent@flying-rat.online")                //add variable - email for creating
-        cy.get("#generic-form-button").click().wait(1000)
             
 
         //go to tab - emails
@@ -587,7 +603,7 @@ describe('login screen', () => {
 
         //go to tab - SocialNetwork
         cy.get('.tabs__list > div:nth-child(7)').click()                                
-        cy.get("#field-select--null").click()
+        cy.get("#field-select--null").click().wait(500)
         cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
         cy.get("#generic-form-button").click().wait(1000)
         
@@ -606,7 +622,7 @@ describe('login screen', () => {
 
 
         //go to tab - Activity
-        cy.get('.tabs__list > div:nth-child(11)').click()                                //Přidá defaultně vyplněnou aktivitu typu "Úkol"                     
+        cy.get('.tabs__list > div:nth-child(10)').click()                                //Přidá defaultně vyplněnou aktivitu typu "Úkol"                     
         cy.get("#field-select--null").click()
         cy.get("#generic-form-button").click().wait(1000)
 
@@ -619,10 +635,6 @@ describe('login screen', () => {
         cy.get("#menu-party > .main-menu__module-wrapper").click()                      //add method everywhere
         cy.get("#party-contact-list-pickup-point").click()
         cy.get("#table-row-0").click()                                                  //add click at physical person
-        cy.get('#input-field-text-firstName-baseInfo').type("firstNamePickupPoint")                               
-        cy.get('#input-field-text-lastName-baseInfo').type("lastNamePickupPoint")                                 
-        cy.get('#input-field-email-pin-contactIdentification').type("emailPickupPoint@flying-rat.online")                //add variable - email for creating
-        cy.get("#generic-form-button").click().wait(1000)
             
 
         //go to tab - emails
@@ -655,7 +667,7 @@ describe('login screen', () => {
 
         //go to tab - SocialNetwork
         cy.get('.tabs__list > div:nth-child(7)').click()                                
-        cy.get("#field-select--null").click()
+        cy.get("#field-select--null").click().wait(500)
         cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
         cy.get("#generic-form-button").click().wait(1000)
         
@@ -674,7 +686,7 @@ describe('login screen', () => {
 
 
         //go to tab - Activity
-        cy.get('.tabs__list > div:nth-child(11)').click()                                //Přidá defaultně vyplněnou aktivitu typu "Úkol"                     
+        cy.get('.tabs__list > div:nth-child(10)').click()                                //Přidá defaultně vyplněnou aktivitu typu "Úkol"                     
         cy.get("#field-select--null").click()
         cy.get("#generic-form-button").click().wait(1000)
 
