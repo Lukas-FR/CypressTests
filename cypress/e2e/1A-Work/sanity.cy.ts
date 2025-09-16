@@ -1,5 +1,4 @@
 import { contains } from "cypress/types/jquery"
-
 const tenant = "qa-cypress"
 
 describe('login screen', () => {
@@ -122,15 +121,50 @@ describe('login screen', () => {
         //go to tab - SocialNetwork
         cy.get('.tabs__list > div:nth-child(7)').click()                                
         cy.get("#field-select--null").click()
-        cy.get("#input-field-text-userId-default").type("Facebook")
+        cy.get("#input-field-text-userId-default").type("Facebook")                     // přidá Facebook
         cy.get("#generic-form-button").click().wait(1000)
         
         cy.get("#field-select--null").click()
-        cy.get('#field-select-socialNetworkTypeId-default > .field-wrapper > .field-wrapper__main').click()
+        cy.get('#field-select-socialNetworkTypeId-default > .field-wrapper > .field-wrapper__main').click()     // přidá Instagram
         cy.get('#field-select-socialNetworkTypeId-default__select__element_1').click()
         cy.get("#input-field-text-userId-default").type("Instagram")                                  
         cy.get("#generic-form-button").click().wait(1000)
 
+
+        //go to tab - UserAccess
+        cy.get('.tabs__list > div:nth-child(8)').click()                                
+        cy.get("#field-select--null").click()
+        cy.get('#field-search-userSearch__st').type("marek").wait(1000).type("{enter}")
+        cy.get("#generic-form-button").click().wait(1000)
+
+
+        //go to tab - Activity
+        cy.get('.tabs__list > div:nth-child(9)').click()                                //Přidá defaultně vyplněnou aktivitu typu "Úkol"                     
+        cy.get("#field-select--null").click()
+        cy.get("#generic-form-button").click().wait(1000)
+        
+        
+        //go to tab - Invoice
+        cy.get('.tabs__list > div:nth-child(9)').click()                 
+        cy.get("#field-select--null").click().wait(3000)                                //Přidá Fakturu a počká 3 vteřiny pro načtení modulu Dokladů 
+        cy.get('#tab-command-Contact.Title').click()                                    //Vrátí se zpět do CRM
+        
+        
+        //go to tab - Pallet
+        cy.get('.tabs__list > div:nth-child(10)').click()                                //Přejde do Sekce Palety                     
+        cy.get("#field-select--null").click()
+        cy.get("#input-field-text-externalId-default").type("123")
+        cy.get("#input-field-text-name-pallet").type("Name")
+        cy.get("#input-field-text-abbreviation-pallet").type("ShorterName")
+        cy.get("input-field-text-count-pallet").type("10")
+        cy.get("#generic-form-button").click().wait(1000)
+        
+        
+        //go to tab - kontaktní osoby
+        
+        
+        
+        
 
 
 

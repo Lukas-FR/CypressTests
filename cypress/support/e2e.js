@@ -15,6 +15,8 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-
+beforeEach(() => {
+  cy.viewport(1500, 1000);
+});
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
