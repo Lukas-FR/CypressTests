@@ -1,6 +1,6 @@
 const { defineConfig } = require("cypress");
 
-module.exports = defineConfig({
+export default defineConfig({
   e2e: {
     watchForFileChanges: false,  // <<< toto vypne automatické spouštění
     setupNodeEvents(on, config) {

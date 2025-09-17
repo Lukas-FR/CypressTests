@@ -1,4 +1,4 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require("e2e");
 
 module.exports = defineConfig({
   e2e: {
